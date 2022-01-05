@@ -1,7 +1,13 @@
 <?php
-get_header(); ?>
+get_header();
 
+pageBanner(array(
+    'title' => 'Welcome to our blog!',
+    'subtitle' => 'Keep up with our lastest news',
+));
+?>
 
+<!--
     <div class="page-banner">
         <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('images/ocean.jpg') ?>)"></div>
         <div class="page-banner__content container container--narrow">
@@ -11,7 +17,7 @@ get_header(); ?>
             </div>
         </div>
     </div>
-
+-->
 
     <div class="container container--narrow page-section">
         <?php
