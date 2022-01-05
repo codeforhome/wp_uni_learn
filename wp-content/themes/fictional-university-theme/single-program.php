@@ -108,34 +108,11 @@ while(have_posts()){
         echo '<h2 class="headline headline--medium">Upcoming '. get_the_title() .' Events</h2> ';
 
         while($homepageEvents->have_posts()){
-            $homepageEvents->the_post(); ?>
-            <div class="event-summary">
-                <a class="event-summary__date t-center" href="#">
-                        <span class="event-summary__month"><?php
-                            $evenDate =  new DateTime(get_field('event_date'));
-                            echo $evenDate->format('M');
+            $homepageEvents->the_post();
 
-                            ?></span>
-                    <span class="event-summary__day"><?php
-                        $evenDate =  new DateTime(get_field('event_date'));
-                        echo $evenDate->format('d');
-                        ?></span>
-                </a>
-                <div class="event-summary__content">
-                    <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                    <p><?php
-                        //echo wp_trim_words(get_the_content(),18);
-                        if(has_excerpt()){
-                            echo get_the_excerpt();
-                        }else{
-                            echo wp_trim_words(get_the_content(),18);
-                        }
+        get_template_part('template-parts/content-event');
 
-                        ?><a href="<?php the_permalink(); ?>" class="nu gray">Learn more</a></p>
-                </div>
-            </div>
-
-        <?php }
+        }
         }
 
         ?>
