@@ -40,6 +40,23 @@ function university_post_type(){
 //        'taxonomies'          => array( 'category' ),
         'menu_icon' => 'dashicons-awards',
     ));
+
+    // professor Post Type
+    register_post_type('professor',array(
+        'public' => true,
+        'supports' => array('title','editor','thumbnail'),
+        'show_in_rest' => true, //use new blog editor
+        'labels' => array(
+            'name' => 'Professors',
+            'add_new_item' => 'Add New Professor',
+            'edit_item' => 'Edit Professor',
+            'all_items' => 'All Professors',
+            'singular_name' => 'Professor',
+        ),
+        // This is where we add taxonomies to our CPT
+//        'taxonomies'          => array( 'category' ),
+        'menu_icon' => 'dashicons-welcome-learn-more',
+    ));
 }
 
 add_action('init','university_post_type');

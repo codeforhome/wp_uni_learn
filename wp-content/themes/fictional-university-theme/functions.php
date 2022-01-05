@@ -19,6 +19,9 @@ function university_feature(){
 //    register_nav_menu('footerLocation2','Footer Location 2');
     //add title
     add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+    add_image_size('professorLandscape',400,260,true);
+    add_image_size('professorPortrait',480,650,true);
 
 }
 
