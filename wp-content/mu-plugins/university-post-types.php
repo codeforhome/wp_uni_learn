@@ -57,6 +57,25 @@ function university_post_type(){
 //        'taxonomies'          => array( 'category' ),
         'menu_icon' => 'dashicons-welcome-learn-more',
     ));
+
+    // Campus Post Type
+    register_post_type('campus',array(
+        'public' => true,
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'campus'),
+        'supports' => array('title','editor'),
+        'show_in_rest' => true, //use new blog editor
+        'labels' => array(
+            'name' => 'Campuses',
+            'add_new_item' => 'Add New Campus',
+            'edit_item' => 'Edit Campus',
+            'all_items' => 'All Campuses',
+            'singular_name' => 'Campus',
+        ),
+        // This is where we add taxonomies to our CPT
+//        'taxonomies'          => array( 'category' ),
+        'menu_icon' => 'dashicons-location-alt',
+    ));
 }
 
 add_action('init','university_post_type');
