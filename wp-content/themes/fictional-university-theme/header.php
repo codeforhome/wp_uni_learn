@@ -7,7 +7,7 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header class="site-header">
+<header class="site-header body-no-scroll">
     <div class="container">
         <h1 class="school-logo-text float-left">
             <a href="<?php echo site_url(); ?>"><strong>Fictional</strong> University</a>

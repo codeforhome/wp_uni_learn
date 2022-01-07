@@ -1131,9 +1131,7 @@ body.admin-bar .search-overlay {
     font-size: 3rem;
   }
 }
-.body-no-scroll {
-  overflow: hidden;
-}
+
 .professor-cards {
   margin: 0;
   padding: 0;
