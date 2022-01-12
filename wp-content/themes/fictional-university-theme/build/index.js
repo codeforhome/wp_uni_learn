@@ -4116,20 +4116,18 @@ class Search {
   }
 
   getResults() {
-    //section 13
-    // this.resultsDiv.html("Image search result here");
-    // this.isSpinnerVisible=false;
-    // console.log('timeout test');
-    jquery__WEBPACK_IMPORTED_MODULE_0___default().getJSON(universityData.root_url + '/wp-json/wp/v2/posts?search=' + this.searchField.val(), posts => {
-      // alert(posts[0].title.rendered)
+    jquery__WEBPACK_IMPORTED_MODULE_0___default().when(jquery__WEBPACK_IMPORTED_MODULE_0___default().getJSON(universityData.root_url + '/wp-json/wp/v2/posts?search=' + this.searchField.val()), jquery__WEBPACK_IMPORTED_MODULE_0___default().getJSON(universityData.root_url + '/wp-json/wp/v2/pages?search=' + this.searchField.val())).then((posts, pages) => {
+      var combinedResults = posts[0].concat(pages[0]);
       this.resultsDiv.html(`
-            <h2 class="search-overlay__section-title">General Information</h2>
-           ${posts.length ? ' <ul class="link-list min-list">' : '<p>No General information matched the search </p>'}
-                ${posts.map(item => `<li><a href="${item.link}">${item.title.rendered}</a></li>`).join('')}
-           ${posts.length ? '</ul>' : ''}
-            
-            `);
+                <h2 class="search-overlay__section-title">General Information</h2>
+               ${combinedResults.length ? ' <ul class="link-list min-list">' : '<p>No General information matched the search </p>'}
+                    ${combinedResults.map(item => `<li><a href="${item.link}">${item.title.rendered}</a></li>`).join('')}
+               ${combinedResults.length ? '</ul>' : ''}
+                
+                `);
       this.isSpinnerVisible = false;
+    }, () => {
+      this.resultsDiv.html('<p>Unexpected error, please try again</p>');
     });
   }
 
