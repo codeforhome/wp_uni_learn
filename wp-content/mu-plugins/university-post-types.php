@@ -43,9 +43,10 @@ function university_post_type(){
 
     // professor Post Type
     register_post_type('professor',array(
+    	'show_in_rest' => true,
         'public' => true,
         'supports' => array('title','editor','thumbnail'),
-        'show_in_rest' => true, //use new blog editor
+//        'show_in_rest' => true, //use new blog editor
         'labels' => array(
             'name' => 'Professors',
             'add_new_item' => 'Add New Professor',
