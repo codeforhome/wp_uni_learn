@@ -6,6 +6,8 @@ function university_post_type(){
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'events'),
+        'capability_type' => 'event',
+        'map_meta_cap' => true,
         'supports' => array('title','editor','excerpt'),
 //        'supports' => array('title','editor','excerpt', 'custom-fields'),
         'show_in_rest' => true, //use new blog editor
@@ -63,6 +65,8 @@ function university_post_type(){
     register_post_type('campus',array(
         'public' => true,
         'has_archive' => true,
+        'capability_type' => 'campus',
+        'map_meta_cap' => true,
         'rewrite' => array('slug' => 'campus'),
         'supports' => array('title','editor'),
         'show_in_rest' => true, //use new blog editor
