@@ -4,7 +4,8 @@ import "../css/style.scss"
 import MobileMenu from "./modules/MobileMenu"
 import HeroSlider from "./modules/HeroSlider"
 import GoogleMap from "./modules/GoogleMap"
-import Search from "./modules/search"
+// import Search from "./modules/search"
+import Search from "./modules/search_new"
 
 // Instantiate a new object using our modules/classes
 const mobileMenu = new MobileMenu()
