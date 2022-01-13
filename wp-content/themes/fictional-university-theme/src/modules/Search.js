@@ -115,6 +115,8 @@ class Search{
         this.searchField.val('');
         setTimeout(() =>this.searchField.focus(),301);
         console.log('our open method just ran!');
+        this.isOverlayOpen =true;
+        return false;
 
     }
 
@@ -122,6 +124,7 @@ class Search{
         this.searchOverlay.removeClass("search-overlay--active");
        $("body").removeClass("body-no-scroll");
         console.log('our close method just ran!');
+        this.isOverlayOpen =false;
 
     }
 
