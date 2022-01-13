@@ -26,7 +26,7 @@ function university_post_type(){
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'program'),
-        'supports' => array('title','editor'),
+        'supports' => array('title'),
 //        'supports' => array('title','editor','excerpt', 'custom-fields'),
         'show_in_rest' => true, //use new blog editor
         'labels' => array(
