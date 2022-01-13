@@ -60,7 +60,7 @@ function university_files(){
 
     wp_localize_script('main-university-js','universityData',array(
             'root_url' => get_site_url(),
-
+		    'nonce' => wp_create_nonce('wp_rest'),
     ));
 
 }

@@ -81,6 +81,27 @@ function university_post_type(){
 //        'taxonomies'          => array( 'category' ),
         'menu_icon' => 'dashicons-location-alt',
     ));
+
+	// my note Post Type
+	register_post_type('note',array(
+		'show_in_rest' => true,
+		'public' => false,
+		'show_ui' => true, //show in admin deskboard
+		'supports' => array('title','editor'),
+//        'show_in_rest' => true, //use new blog editor
+		'labels' => array(
+			'name' => 'Notes',
+			'add_new_item' => 'Add New Note',
+			'edit_item' => 'Edit Note',
+			'all_items' => 'All Notes',
+			'singular_name' => 'Note',
+		),
+		// This is where we add taxonomies to our CPT
+//        'taxonomies'          => array( 'category' ),
+		'menu_icon' => 'dashicons-welcome-write-blog',
+	));
 }
 
 add_action('init','university_post_type');
+
+
