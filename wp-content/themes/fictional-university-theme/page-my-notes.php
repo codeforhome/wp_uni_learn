@@ -21,6 +21,8 @@ while(have_posts()){
             <input class="new-note-title" placeholder="Title" type="text">
             <textarea  class="new-note-body" placeholder="Your note here..." name="" id="" cols="30" rows="10"></textarea>
        <span class="submit-note">Create Note</span>
+            <span class="note-limit-message">Note Limit reached: delete an existing note to make room for a new one</span>
+
         </div>
 
 
@@ -41,7 +43,6 @@ while(have_posts()){
                         <textarea readonly class="note-body-field" name="" id="" cols="30" rows="10"><?php echo esc_attr(wp_strip_all_tags(get_the_content())); ?></textarea>
 
                         <span class="update-note btn btn--blue btn--small"><i class="fa fa-arrow-right" aria-hidden="true"></i> Save</span>
-
                     </li>
 
              <?php   }
