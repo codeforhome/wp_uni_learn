@@ -103,6 +103,28 @@ function university_post_type(){
 		'menu_icon' => 'dashicons-welcome-write-blog',
 	));
 
+	// Slider Post Type
+	register_post_type('slider',array(
+//		'capability_type' => 'slider',
+//		'map_meta_cap' => true,
+//		'show_in_rest' => false,
+		'public' => false,
+		'show_ui' => true, //show in admin deskboard
+		'supports' => array('title'),
+//        'show_in_rest' => true, //use new blog editor
+		'labels' => array(
+			'name' => 'Sliders',
+			'add_new_item' => 'Add New Slider',
+			'edit_item' => 'Edit Slider',
+			'all_items' => 'All Sliders',
+			'singular_name' => 'Slider',
+		),
+		// This is where we add taxonomies to our CPT
+//        'taxonomies'          => array( 'category' ),
+		'menu_icon' => 'dashicons-align-center',
+	));
+
+
 	// my like Post Type
 	register_post_type('like',array(
 //		'capability_type' => 'like',

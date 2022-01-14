@@ -41,6 +41,11 @@ node_modules
 ai1wm-backups/
 
 # All plugins
+wpseo*
+wordpress-seo*
+uwac
+nextend-smart-slider3*
+
 #
 # Note: If you wish to whitelist plugins,
 # uncomment the next line
