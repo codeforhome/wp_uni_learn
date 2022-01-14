@@ -102,6 +102,26 @@ function university_post_type(){
 //        'taxonomies'          => array( 'category' ),
 		'menu_icon' => 'dashicons-welcome-write-blog',
 	));
+
+	// my like Post Type
+	register_post_type('like',array(
+//		'capability_type' => 'like',
+//		'map_meta_cap' => true,
+//		'show_in_rest' => true,
+		'public' => false,
+		'show_ui' => true, //show in admin deskboard
+		'supports' => array('title'),
+		'labels' => array(
+			'name' => 'Likes',
+			'add_new_item' => 'Add New Like',
+			'edit_item' => 'Edit Like',
+			'all_items' => 'All Likes',
+			'singular_name' => 'Like',
+		),
+		// This is where we add taxonomies to our CPT
+//        'taxonomies'          => array( 'category' ),
+		'menu_icon' => 'dashicons-heart',
+	));
 }
 
 add_action('init','university_post_type');
